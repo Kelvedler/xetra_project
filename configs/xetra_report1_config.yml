@@ -1,3 +1,32 @@
+s3:
+  src_endpoint_url: "https://s3.eu-central-1.amazonaws.com"
+  src_bucket: "xetra-1234"
+  trg_endpoint_url: "https://s3.eu-central-1.amazonaws.com"
+  trg_bucket: "xetra-kelvedler"
+source:
+  first_extract_date: "2022-03-16"
+  columns: ["ISIN", "Mnemonic", "Date", "Time", "StartPrice", "EndPrice", "MinPrice", "MaxPrice", "TradedVolume"]
+  col_date: "Date"
+  col_isin: "ISIN"
+  col_time: "Time"
+  col_min_price: "MinPrice"
+  col_start_price: "StartPrice"
+  col_max_price: "MaxPrice"
+  col_traded_volume: "TradedVolume"
+target:
+  key: "report1/xetra_daily_report"
+  key_date_format: "%Y-%m-%d %H:%M:%S"
+  format: "parquet"
+  col_isin: "ISIN"
+  col_date: "Date"
+  col_opening_price: "OpeningPriceEur"
+  col_closing_price: "ClosingPriceEur"
+  col_min_price: "MinimumPriceEur"
+  col_max_price: "MaximumPriceEur"
+  col_daily_trading_volume: "DailyTradedVolume"
+  col_change_previous_closing: "ChangePrevClosing%"
+meta:
+  key: "meta/report1/xetra_report1_meta_file.csv"
 logging:
   version: 1
   formatters:

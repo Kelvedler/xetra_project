@@ -2,3 +2,6 @@
 Pipfile.lock
 .mypy_cache/
 *.coverage
+.env
+meta_file.csv
+

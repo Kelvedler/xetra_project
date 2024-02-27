@@ -13,6 +13,7 @@ pyyaml = "==6.0.1"
 types-pyyaml = "==6.0.12.12"
 moto = "==5.0.2"
 coverage = "==7.4.2"
+pandas-stubs = "==2.2.0.240218"
 
 [dev-packages]
 
